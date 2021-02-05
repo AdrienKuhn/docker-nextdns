@@ -6,7 +6,8 @@ RUN apt update \
 RUN curl -L https://nextdns.io/repo.gpg | apt-key add - \
   && echo "deb https://nextdns.io/repo/deb stable main" | tee /etc/apt/sources.list.d/nextdns.list \
   && apt update \
-  && apt install nextdns
+  && apt install nextdns \
+  && apt clean
 
 EXPOSE 53/tcp 53/udp
 
